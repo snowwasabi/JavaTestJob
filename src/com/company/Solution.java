@@ -63,8 +63,7 @@ public class Solution {
             }
         }
 
-        Integer r = field[lengthY - 1][lengthX - 1];
-        return (r);
+        return (field[lengthY - 1][lengthX - 1]);
     }
 
 }
