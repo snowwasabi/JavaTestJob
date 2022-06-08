@@ -12,6 +12,6 @@ class SolutionTest {
 
         Solution res = new Solution();
 
-        assertEquals("12", res.getResult(race, cellType));
+        assertEquals(12, res.getResult(race, cellType));
     }
 }

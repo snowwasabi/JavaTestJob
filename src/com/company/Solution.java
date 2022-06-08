@@ -27,20 +27,14 @@ public class Solution {
                 break;
         }
 
-//        System.out.print(cellType + "\n");
-//        System.out.print("\n");
-
         //      Создание поля
         //1. Из строки в массив
-        String strArr[] = cellType.split(" ");
-        int numArr[] = new int[strArr.length];
+        String[] strArr = cellType.split(" ");
+        int[] numArr = new int[strArr.length];
         for (int i = 0; i < strArr.length; i++) {
             numArr[i] = Integer.parseInt(strArr[i]);
-//            System.out.print(numArr[i]);
         }
         numArr[0] = 0; //т.к. стартовая клетка не входит в затраты
-
-//        System.out.print("\n");
 
         //2. Из массива в двумерный массив
         int lengthX = 4;
@@ -51,24 +45,12 @@ public class Solution {
             for (int j = 0; j < lengthY; j++) {
                 try {
                     field[i][j] = numArr[n];
-//                    System.out.print(field[i][j]+"\t");
                 } catch (ArrayIndexOutOfBoundsException aioobe) {
                     field[i][j] = 0;
                 }
                 n++;
             }
-//            System.out.print("\n");
         }
-
-//        System.out.print("\n");
-
-//        for (int i = 0; i < lengthY; i++){
-//            for (int j = 0; j < lengthX; j++) {
-//                System.out.print(field[i][j] + "\t");
-//            }
-//            System.out.print("\n");
-//        }
-//        System.out.print("\n");
 
         //      Нахождение кратчайшего пути!
         for (int i = 1; i < field.length; i++) {
@@ -80,13 +62,6 @@ public class Solution {
                 field[i][j] = field[i][j] + Math.min(field[i - 1][j], field[i][j - 1]);
             }
         }
-
-//        for (int i = 0; i < lengthY; i++){
-//            for (int j = 0; j < lengthX; j++) {
-//                System.out.print(field[i][j] + "\t");
-//            }
-//            System.out.print("\n");
-//        }
 
         Integer r = field[lengthY - 1][lengthX - 1];
         return (r);
