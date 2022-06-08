@@ -9,7 +9,6 @@ class SolutionTest {
         String race = "Woodman";
         String cellType = "STWSWTPPTPTTPWPP";
 
-
         Solution res = new Solution();
 
         assertEquals(12, res.getResult(race, cellType));

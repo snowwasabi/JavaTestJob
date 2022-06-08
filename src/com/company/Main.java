@@ -39,6 +39,7 @@ public class Main {
             System.out.print("Error: " + e);
         }
 
+        assert race != null;
         Integer s = Solution.getResult(race, cellType);
         System.out.print(s);
     }
